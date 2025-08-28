@@ -8,38 +8,75 @@
   <script src="config.js"></script>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1 id="company-name"></h1>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="privacy_policy.html">Privacy Policy</a>
-      <a href="mailto:" id="contact-link">Contact</a>
-    </nav>
+    <div class="container">
+      <h1 id="company-name"></h1>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#mission">Mission</a>
+        <a href="privacy_poicy.html">Privacy</a>
+        <a href="mailto:" id="contact-link">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>About</h2>
-    <p id="about-text"></p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Innovative Engineering for the Real World</h2>
+      <p>At <span id="hero-company"></span>, we create sustainable, efficient solutions to real-world problems.</p>
+      <a href="#services" class="cta-button">Explore Services</a>
+    </div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>🚀 App 1 – Short description</li>
-      <li>⚡ App 2 – Short description</li>
-      <li>🛠️ App 3 – Short description</li>
-    </ul>
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <ul class="cards">
+        <li><strong>⚙️ Engineering</strong><br> Full-stack mechatronic engineering services.</li>
+        <li><strong>🎨 Design</strong><br> Industrial and product design with usability in mind.</li>
+        <li><strong>🧑‍💼 Consultancy</strong><br> Strategic technology and systems consultancy.</li>
+        <li><strong>📱 Apps</strong><br> Mobile & desktop applications tailored to your needs.</li>
+        <li><strong>🤖 AI</strong><br> Intelligent automation and decision-making systems.</li>
+      </ul>
+    </div>
   </section>
 
+  <!-- Solutions -->
+  <section id="solutions">
+    <div class="container">
+      <h2>Solutions</h2>
+      <p>Coming Soon – Stay tuned for our upcoming innovations.</p>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section id="mission" class="alt">
+    <div class="container">
+      <h2>Our Mission</h2>
+      <p>
+        <span id="mission-company"></span> provides real-world solutions to real-world problems in innovative ways. 
+        We strive to be efficient, sustainable, and impactful in everything we do.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; <span id="footer-name"></span> <span id="year"></span></p>
+    <div class="container">
+      <p>&copy; <span id="footer-name"></span> <span id="year"></span></p>
+    </div>
   </footer>
 
   <script>
-    // Inject config variables into DOM
+    // Inject config variables
     document.getElementById("title").innerText = CONFIG.companyName;
     document.getElementById("company-name").innerText = CONFIG.companyName;
-    document.getElementById("about-text").innerText = CONFIG.companyName + " builds innovative technology solutions.";
+    document.getElementById("hero-company").innerText = CONFIG.companyName;
+    document.getElementById("mission-company").innerText = CONFIG.companyName;
     document.getElementById("footer-name").innerText = CONFIG.companyName;
     document.getElementById("year").innerText = new Date().getFullYear();
     document.getElementById("contact-link").href = "mailto:" + CONFIG.email;
