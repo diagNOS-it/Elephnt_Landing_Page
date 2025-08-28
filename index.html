@@ -136,14 +136,14 @@
 
       // Apply config
       const cfg = window.siteConfig;
-      document.getElementById('pageTitle').innerText = cfg.companyName;
-      document.getElementById('companyName').innerText = cfg.companyName;
-      document.getElementById('navCompanyName').innerText = cfg.companyName;
-      document.getElementById('companyNameFooter').innerText = cfg.companyName;
-      document.getElementById('contactEmail').innerText = cfg.contactEmail;
-      document.getElementById('contactEmail').href = "mailto:" + cfg.contactEmail;
+      document.getElementById('pageTitle').innerText = CONFIG.companyName;
+      document.getElementById('companyName').innerText = CONFIG.companyName;
+      document.getElementById('navCompanyName').innerText = CONFIG.companyName;
+      document.getElementById('companyNameFooter').innerText = CONFIG.companyName;
+      document.getElementById('contactEmail').innerText = CONFIG.contactEmail;
+      document.getElementById('contactEmail').href = "mailto:" + CONFIG.contactEmail;
       document.getElementById('privacyLink').href = "privacy_policy.html";
-      document.getElementById('missionText').innerText = cfg.mission;
+      document.getElementById('missionText').innerText = CONFIG.mission;
       document.getElementById('year').innerText = new Date().getFullYear();
     });
   </script>
