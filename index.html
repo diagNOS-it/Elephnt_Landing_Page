@@ -1,85 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="title"></title>
-  <link rel="stylesheet" href="style.css">
+  <title id="pageTitle"></title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Config -->
   <script src="config.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0d0d0d;
+      color: #f3f4f6;
+    }
+    [data-scroll-animation] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    [data-scroll-animation].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .cta-button:hover {
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+  </style>
 </head>
-<body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1 id="company-name"></h1>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#mission">Mission</a>
-        <a href="privacy_poicy.html">Privacy</a>
-        <a href="mailto:" id="contact-link">Contact</a>
-      </nav>
-    </div>
-  </header>
+<body class="antialiased">
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h2>Innovative Engineering for the Real World</h2>
-      <p>At <span id="hero-company"></span>, we create sustainable, efficient solutions to real-world problems.</p>
-      <a href="#services" class="cta-button">Explore Services</a>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <ul class="cards">
-        <li><strong>⚙️ Engineering</strong><br> Full-stack mechatronic engineering services.</li>
-        <li><strong>🎨 Design</strong><br> Industrial and product design with usability in mind.</li>
-        <li><strong>🧑‍💼 Consultancy</strong><br> Strategic technology and systems consultancy.</li>
-        <li><strong>📱 Apps</strong><br> Mobile & desktop applications tailored to your needs.</li>
-        <li><strong>🤖 AI</strong><br> Intelligent automation and decision-making systems.</li>
+  <!-- Sticky Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-gray-950/90 backdrop-blur-md border-b border-gray-800 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#home" class="text-lg font-bold text-white" id="navCompanyName"></a>
+      <ul class="hidden md:flex space-x-8 text-gray-300 font-medium">
+        <li><a href="#services" class="hover:text-white">Services</a></li>
+        <li><a href="#solutions" class="hover:text-white">Solutions</a></li>
+        <li><a href="#contact" class="hover:text-white">Contact</a></li>
       </ul>
     </div>
-  </section>
+  </nav>
 
-  <!-- Solutions -->
-  <section id="solutions">
-    <div class="container">
-      <h2>Solutions</h2>
-      <p>Coming Soon – Stay tuned for our upcoming innovations.</p>
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center text-center p-6">
+    <div class="max-w-4xl mx-auto pt-20"> <!-- add padding-top so navbar doesn't overlap -->
+      <h1 class="text-5xl sm:text-6xl font-extrabold mb-6 leading-tight tracking-tight" data-scroll-animation>
+        <span class="text-gray-300" id="companyName"></span><br>
+        Innovative. Efficient. Sustainable.
+      </h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto" data-scroll-animation id="missionText"></p>
+      <a href="#services" class="inline-block px-8 py-4 bg-gray-100 text-gray-900 font-semibold rounded-full shadow-lg transition transform hover:scale-105 cta-button" data-scroll-animation>
+        Discover Our Services
+      </a>
     </div>
   </section>
 
-  <!-- Mission -->
-  <section id="mission" class="alt">
-    <div class="container">
-      <h2>Our Mission</h2>
-      <p>
-        <span id="mission-company"></span> provides real-world solutions to real-world problems in innovative ways. 
-        We strive to be efficient, sustainable, and impactful in everything we do.
-      </p>
+  <!-- Services Section -->
+  <section id="services" class="py-16 md:py-24 bg-gray-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-scroll-animation>Our Services</h2>
+        <p class="text-gray-400 text-lg" data-scroll-animation>
+          Full engineering capabilities with a mechatronic-driven approach.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800" data-scroll-animation>
+          <h3 class="text-xl font-bold mb-2">Engineering</h3>
+          <p class="text-gray-400">Full-stack engineering services from concept to deployment.</p>
+        </div>
+        <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800" data-scroll-animation>
+          <h3 class="text-xl font-bold mb-2">Design</h3>
+          <p class="text-gray-400">User-focused design with modern interfaces and strong UX principles.</p>
+        </div>
+        <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800" data-scroll-animation>
+          <h3 class="text-xl font-bold mb-2">Consultancy</h3>
+          <p class="text-gray-400">Expert guidance across software, hardware, and integrated systems.</p>
+        </div>
+        <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800" data-scroll-animation>
+          <h3 class="text-xl font-bold mb-2">Apps</h3>
+          <p class="text-gray-400">Mobile and web applications built for scale and sustainability.</p>
+        </div>
+        <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800" data-scroll-animation>
+          <h3 class="text-xl font-bold mb-2">AI</h3>
+          <p class="text-gray-400">Leveraging artificial intelligence to solve real-world challenges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Section -->
+  <section id="solutions" class="py-16 md:py-24 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4" data-scroll-animation>Our Solutions</h2>
+      <p class="text-lg text-gray-400" data-scroll-animation>Coming Soon...</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 md:py-24 bg-gray-950 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4" data-scroll-animation>Contact Us</h2>
+      <p class="text-lg text-gray-400 mb-4" data-scroll-animation>We’d love to hear from you.</p>
+      <a id="contactEmail" class="text-blue-400 underline" data-scroll-animation></a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; <span id="footer-name"></span> <span id="year"></span></p>
-    </div>
+  <footer class="py-8 text-center text-gray-500 text-sm">
+    <p>
+      © <span id="year"></span> <span id="companyNameFooter"></span>. All rights reserved. |
+      <a id="privacyLink" class="underline text-gray-400">Privacy Policy</a>
+    </p>
   </footer>
 
+  <!-- Animation + Config Script -->
   <script>
-    // Inject config variables
-    document.getElementById("title").innerText = CONFIG.companyName;
-    document.getElementById("company-name").innerText = CONFIG.companyName;
-    document.getElementById("hero-company").innerText = CONFIG.companyName;
-    document.getElementById("mission-company").innerText = CONFIG.companyName;
-    document.getElementById("footer-name").innerText = CONFIG.companyName;
-    document.getElementById("year").innerText = new Date().getFullYear();
-    document.getElementById("contact-link").href = "mailto:" + CONFIG.email;
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('[data-scroll-animation]').forEach(el => observer.observe(el));
+
+      // Apply config
+      const cfg = window.siteConfig;
+      document.getElementById('pageTitle').innerText = cfg.companyName;
+      document.getElementById('companyName').innerText = cfg.companyName;
+      document.getElementById('navCompanyName').innerText = cfg.companyName;
+      document.getElementById('companyNameFooter').innerText = cfg.companyName;
+      document.getElementById('contactEmail').innerText = cfg.contactEmail;
+      document.getElementById('contactEmail').href = "mailto:" + cfg.contactEmail;
+      document.getElementById('privacyLink').href = "privacy_policy.html";
+      document.getElementById('missionText').innerText = cfg.mission;
+      document.getElementById('year').innerText = new Date().getFullYear();
+    });
   </script>
 </body>
 </html>
