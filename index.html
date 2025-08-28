@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="title"></title>
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js"></script>
+</head>
+<body>
+  <header>
+    <h1 id="company-name"></h1>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:" id="contact-link">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p id="about-text"></p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li>🚀 App 1 – Short description</li>
+      <li>⚡ App 2 – Short description</li>
+      <li>🛠️ App 3 – Short description</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="footer-name"></span> <span id="year"></span></p>
+  </footer>
+
+  <script>
+    // Inject config variables into DOM
+    document.getElementById("title").innerText = CONFIG.companyName;
+    document.getElementById("company-name").innerText = CONFIG.companyName;
+    document.getElementById("about-text").innerText = CONFIG.companyName + " builds innovative technology solutions.";
+    document.getElementById("footer-name").innerText = CONFIG.companyName;
+    document.getElementById("year").innerText = new Date().getFullYear();
+    document.getElementById("contact-link").href = "mailto:" + CONFIG.email;
+  </script>
+</body>
+</html>
